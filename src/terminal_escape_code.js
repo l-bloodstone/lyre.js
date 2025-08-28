@@ -1,0 +1,40 @@
+const codes = {
+    reset: "\x1b[0m",
+    bold: "1",
+    dim: "2",
+    italic: "3",
+    underline: "4",
+    invert: "7",
+    black: "30",
+    red: "31",
+    green: "32",
+    brown: "33",
+    blue: "34",
+    magenta: "35",
+    cyan: "36",
+    white: "37",
+    black_b: "40",
+    red_b: "41",
+    green_b: "42",
+    brown_b: "43",
+    blue_b: "44",
+    magenta_b: "45",
+    cyan_b: "46",
+    white_b: "47",
+    prefix : "\x1b[",
+    suffix : "m"
+}
+
+function colorize(msg, options) {
+    let codeStr = ""
+    for (let i = 0; i < options.length; i++) {
+        if (i === options.length - 1) {
+            codeStr += `${codes[options[i]]}`
+        } else {
+            codeStr += `${codes[options[i]]};`
+        }
+    }
+    return `${codes.prefix}${codeStr}${codes.suffix}${msg}${codes.reset}`
+}
+
+export default { colorize }

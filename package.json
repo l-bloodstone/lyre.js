@@ -1,0 +1,26 @@
+{
+  "name": "lyre",
+  "version": "0.0.1",
+  "description": "JS loging Package",
+  "keywords": [
+    "log",
+    "js",
+    "cli",
+    "library"
+  ],
+  "homepage": "https://github.com/l-bloodstone/lyre.js#readme",
+  "bugs": {
+    "url": "https://github.com/l-bloodstone/lyre.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l-bloodstone/lyre.js.git"
+  },
+  "license": "ISC",
+  "author": "Lucas BloodStone",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  }
+}
