@@ -1,4 +1,4 @@
-const codes = {
+const codes = Object.freeze({
     reset: "\x1b[0m",
     bold: "1",
     dim: "2",
@@ -13,19 +13,19 @@ const codes = {
     magenta: "35",
     cyan: "36",
     white: "37",
-    black_b: "40",
-    red_b: "41",
-    green_b: "42",
-    brown_b: "43",
-    blue_b: "44",
-    magenta_b: "45",
-    cyan_b: "46",
-    white_b: "47",
+    blackBg: "40",
+    redBg: "41",
+    greenBg: "42",
+    brownBg: "43",
+    blueBg: "44",
+    magentaBg: "45",
+    cyanBg: "46",
+    whiteBg: "47",
     prefix : "\x1b[",
     suffix : "m"
-}
+})
 
-function colorize(msg, options) {
+function encode(msg, options) {
     let codeStr = ""
     for (let i = 0; i < options.length; i++) {
         if (i === options.length - 1) {
@@ -37,4 +37,4 @@ function colorize(msg, options) {
     return `${codes.prefix}${codeStr}${codes.suffix}${msg}${codes.reset}`
 }
 
-export default { colorize }
+export default { encode }
