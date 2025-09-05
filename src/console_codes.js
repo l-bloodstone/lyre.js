@@ -1,4 +1,4 @@
-export const codes = Object.freeze({
+const codes = Object.freeze({
     reset: "\x1b[0m",
     bold: "1",
     dim: "2",
@@ -49,4 +49,4 @@ export function enc(msg, options) {
     return msg
 }
 
-export default { enc, codes }
+export default { enc }
