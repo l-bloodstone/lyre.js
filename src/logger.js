@@ -28,7 +28,7 @@ export class Custom {
         this.opts = opts
     }
     log(msg, msgOpts) {
-        console.log(`${timer.now()} ${enc(this.name + ":", this.opts)} ${enc(msg, msgOpts)}`)
+        console.log(`${timer.now()} ${enc(this.name + " ", this.opts)} ${enc(msg, msgOpts)}`)
     }
 }
 
