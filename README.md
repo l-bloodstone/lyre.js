@@ -7,10 +7,17 @@
 * Customizable Message
 * Custom log class
 
+## Installation
+```bash
+npm install lyre.js
+```
+
+
 ## Example:
 Code example of the above screenshot.
 ```js
-import lyre from "./index.js"
+import * as lyre from "lyre.js" // ES modules
+// const lyre = require("lyre.js") // commonjs
 
 lyre.error("This is an error!")
 lyre.info("This is an info.")
