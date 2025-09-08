@@ -53,7 +53,6 @@ export function decRGB(RGB) {
             rgb.g = ~~((RGB & 0x00ff00) / 0xff)
         }
         rgb.b = RGB & 0x0000ff
-        console.log(rgb)
     } else {
         rgb.r = RGB.r
         rgb.g = RGB.g

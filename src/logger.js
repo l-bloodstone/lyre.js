@@ -26,12 +26,13 @@ export function debug(msg, trace=true, msgOptions, RGB) {
 }
 
 export class Custom {
-    constructor(name, opts) {
+    constructor(name, opts, rgb) {
         this.name = name
         this.opts = opts
+        this.rgb = rgb
     }
     log(msg, msgOptions, RGB) {
-        console.log(`${timer.now()} ${enc(this.name + " ", this.opts)} ${enc(msg, msgOptions, RGB)}`)
+        console.log(`${timer.now()} ${enc(this.name + " ", this.opts, this.rgb)} ${enc(msg, msgOptions, RGB)}`)
     }
 }
 
