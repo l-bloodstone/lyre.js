@@ -33,7 +33,37 @@ function sanityCheck(options) {
     }
 }
 
-export function enc(msg, options) {
+function trunkRGBValues(RGB) {
+    for (let [key, value] of Object.entries(RGB)) {
+        if (value > 255) {
+            RGB[key] = 255
+        }
+    }
+    return RGB
+}
+
+export function decRGB(RGB) {
+    if (!RGB) return
+    const rgb = { r: 0, g: 0, b: 0 }
+    if (Number.isInteger(RGB)) {
+        if ( RGB > 0xffff ) {
+            rgb.r = ~~((RGB & 0xff0000) / 0xffff)
+        }
+        if (RGB > 0xff) {
+            rgb.g = ~~((RGB & 0x00ff00) / 0xff)
+        }
+        rgb.b = RGB & 0x0000ff
+        console.log(rgb)
+    } else {
+        rgb.r = RGB.r
+        rgb.g = RGB.g
+        rgb.b = RGB.b
+    }
+    return trunkRGBValues(rgb)
+}
+
+export function enc(msg, options, RGB) {
+    const rgb = decRGB(RGB)
     if (options) {
         sanityCheck(options)
         let codeStr = ""
@@ -43,6 +73,9 @@ export function enc(msg, options) {
             } else {
                 codeStr += `${codes[options[i]]};`
             }
+        }
+        if (rgb) {
+            codeStr += `;38;2;${rgb.r};${rgb.g};${rgb.b}`
         }
         return `${codes.prefix}${codeStr}${codes.suffix}${msg}${codes.reset}`
     }
