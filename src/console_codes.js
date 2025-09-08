@@ -64,7 +64,7 @@ export function decRGB(RGB) {
 
 export function enc(msg, options, RGB) {
     const rgb = decRGB(RGB)
-    if (options) {
+    if (options != null) {
         sanityCheck(options)
         let codeStr = ""
         for (let i = 0; i < options.length; i++) {
