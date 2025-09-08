@@ -3,23 +3,26 @@ import timer from "./timer.js"
 import { enc } from "./console_codes.js"
 
 export function err(msg, msgOptions) {
-    console.log(formatter.errorFormat(msg, msgOptions))
+    console.error(formatter.errorFormat(msg, msgOptions))
 }
 
 export function error(msg, msgOptions) {
-    console.log(formatter.errorFormat(msg, msgOptions))
+    console.error(formatter.errorFormat(msg, msgOptions))
 }
 
 export function warn(msg, msgOptions) {
-    console.log(formatter.warningFormat(msg, msgOptions))
+    console.warn(formatter.warningFormat(msg, msgOptions))
 }
 
 export function info(msg, msgOptions) {
-    console.log(formatter.infoFormat(msg, msgOptions))
+    console.info(formatter.infoFormat(msg, msgOptions))
 }
 
-export function debug(msg, msgOptions) {
-    console.log(formatter.debugFormat(msg, msgOptions))
+export function debug(msg, trace=true, msgOptions) {
+    console.debug(formatter.debugFormat(msg, msgOptions))
+    if (trace) {
+        console.trace()
+    }
 }
 
 export class Custom {

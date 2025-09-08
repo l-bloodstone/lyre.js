@@ -7,7 +7,7 @@ export function errorFormat(msg, msgOptions) {
 }
 
 export function warningFormat(msg, msgOptions) {
-    const formatedMsg = `${now()} ${enc("WARNING ", ["bold", "brown"])} ${enc(msg, msgOptions)}`
+    const formatedMsg = `${now()} ${enc("WARNING ", ["bold", "yellow"])} ${enc(msg, msgOptions)}`
     return formatedMsg
 }
 

@@ -4,8 +4,9 @@
 ![screenshot](./assets/screenshot.png)
 
 ## Features:
-* Customizable Message
-* Custom log class
+* Customizable Message.
+* Log debug message with function trace.
+* `Custom` logger class.
 
 ## Installation
 ```bash
@@ -22,7 +23,7 @@ import * as lyre from "lyre.js" // ES modules
 lyre.error("This is an error!")
 lyre.info("This is an info.")
 lyre.warn("This is a warning!")
-lyre.debug("This is debug log.")
+lyre.debug("This is debug log.", false)
 
 new lyre.Custom("IMPL", ["bold", "magenta"])
     .log("Implementation of a function")
@@ -40,32 +41,34 @@ lyre.error("This message has underline and bold text, ['underline', 'bold'])
 #### Customizable `keywords`.
 This keyword base on linux [`console-codes`](https://man7.org/linux/man-pages/man4/console_codes.4.html). Available keywords are-
 
-`[ 'bold', 'dim', 'italic', 'underline', 'invert', 'black', 'red', 'green', 'brown', 'blue', 'magenta', 'cyan', 'white' ]`
+`[ 'bold', 'dim', 'italic', 'underline', 'invert', 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' ]`
 
 **To set Background color-**
 
-`[ 'blackBg', 'redBg', 'greenBg', 'brownBg', 'blueBg', 'magentaBg', 'cyanBg', 'whiteBg' ]`
+`[ 'blackBg', 'redBg', 'greenBg', 'yellowBg', 'blueBg', 'magentaBg', 'cyanBg', 'whiteBg' ]`
 
-**Terminals may have their own color scheme. The names are kind of misleading. Terminal color scheme may be defined the `brown` as a yellow color.**
+**Terminals may have their own color scheme. The color names are relative to the terminal colors.**
 
 ## API
 parameter names:
 
-`msg <string>`
+`msg <string>` default `''`
 
-`opts <array of keywords>` 
+`trace <bool>` default `true`
+
+`opts <array of keywords>` default `[]`
 ___
 
 ### `err(msg, opts)`
 ### `error(msg, opts)` same as `err`
 ### `warn(msg, opts)`
 ### `info(msg, opts)`
-### `debug(msg, opts)`
+### `debug(msg, trace, opts)`
 
 ## `Custom` class
-parameter name:
+parameter names:
 
-`name <string>`
+`name <string>` default `''`
 ___
 ### `new Custom(name, opts)`
 ```js
