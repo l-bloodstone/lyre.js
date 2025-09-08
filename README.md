@@ -23,7 +23,9 @@ import * as lyre from "lyre.js" // ES modules
 lyre.error("This is an error!")
 lyre.info("This is an info.")
 lyre.warn("This is a warning!")
-lyre.debug("This is debug log.", false)
+
+// 2nd argument is to suppress function trace
+lyre.debug("This is debug log.", false) 
 
 new lyre.Custom("IMPL", ["bold", "magenta"])
     .log("Implementation of a function")
