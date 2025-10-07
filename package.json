@@ -1,6 +1,6 @@
 {
   "name": "lyre.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "JavaScript logging library for CLI apps and some Chromium based browers.",
   "keywords": [
     "logging",
