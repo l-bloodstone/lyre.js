@@ -32,7 +32,7 @@ export class Custom {
         this.rgb = rgb
     }
     log(msg, msgOptions, RGB) {
-        console.log(`${timer.now()} ${enc(this.name + " ", this.opts, this.rgb)} ${enc(msg, msgOptions, RGB)}`)
+        console.log(`${timer.now()} ${enc(this.name, this.opts, this.rgb)}  ${enc(msg, msgOptions, RGB)}`)
     }
 }
 
